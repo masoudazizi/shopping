@@ -1,0 +1,35 @@
+logging:
+  level:
+    ROOT: INFO
+    com.energizeglobal.shopping: debug
+
+spring:
+  application:
+    name: shopping
+  jpa:
+    hibernate:
+      ddl-auto: update
+  messages:
+    basename: messages
+  datasource:
+    type: com.zaxxer.hikari.HikariDataSource
+    url: jdbc:mysql://localhost:3306/shopping?useUnicode=true&characterEncoding=utf8&useSSL=false&useLegacyDatetimeCode=false&serverTimezone=UTC&createDatabaseIfNotExist=true
+    username: root
+    password: root
+
+server:
+  port: 8080
+
+application:
+  cors:
+    allowed-origins: '*'
+    allowed-methods: '*'
+    allowed-headers: '*'
+    allow-credentials: false
+    max-age: 1800
+  security:
+    authentication:
+      jwt:
+        base64-secret: ODE1MGQ0ODgxZjBlYzNkNzlkYjY2ZmM4YmM1NDEzMzg2N2QxOGY3M2MxYmMxYWRiNzI5ODRkZDRjMTcwNTM4Mzk2N2RiMzFhNDNkOWU1YmZmOWRjMjVlODdkZTZhMDA1ODRiZjE5YTk2NDA2NGEwOWM3ODM3ZDhjODUyZTA0NjM=
+        token-validity-in-seconds: 86400
+        token-validity-in-seconds-for-remember-me: 2592000
