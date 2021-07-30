@@ -2,7 +2,9 @@ package com.energizeglobal.shopping.web.rest;
 
 import com.energizeglobal.shopping.config.Constants;
 import com.energizeglobal.shopping.repository.ProductRepository;
+import com.energizeglobal.shopping.repository.ReviewRepository;
 import com.energizeglobal.shopping.service.ProductService;
+import com.energizeglobal.shopping.service.dto.IAvgProductRate;
 import com.energizeglobal.shopping.service.dto.ProductDTO;
 import com.energizeglobal.shopping.service.dto.ProductSearchDTO;
 import com.energizeglobal.shopping.web.rest.exceptions.BadRequestException;
@@ -32,6 +34,7 @@ public class ProductResource {
 
     private final static Logger log = LoggerFactory.getLogger(ProductResource.class);
     private final ProductService productService;
+    private final ReviewRepository reviewRepository;
 
     @PostMapping("/products")
     @PreAuthorize("hasAuthority(\"" + Constants.ADMIN + "\")")

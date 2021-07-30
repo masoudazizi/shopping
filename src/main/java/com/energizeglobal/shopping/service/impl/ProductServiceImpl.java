@@ -1,6 +1,7 @@
 package com.energizeglobal.shopping.service.impl;
 
 import com.energizeglobal.shopping.domain.Product;
+import com.energizeglobal.shopping.repository.ProductRateRepository;
 import com.energizeglobal.shopping.repository.ProductRepository;
 import com.energizeglobal.shopping.service.ProductService;
 import com.energizeglobal.shopping.service.dto.ProductDTO;
@@ -17,6 +18,7 @@ import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -27,6 +29,7 @@ public class ProductServiceImpl implements ProductService {
     private final static Logger log = LoggerFactory.getLogger(ProductServiceImpl.class);
 
     private final ProductRepository productRepository;
+    private final ProductRateRepository productRateRepository;
 
     private final ProductMapper productMapper;
 
@@ -73,7 +76,11 @@ public class ProductServiceImpl implements ProductService {
     @Transactional(readOnly = true)
     @Override
     public Page<ProductDTO> search(ProductSearchDTO productSearchDTO, Pageable pageable) {
-        Specification<Product> specification = ProductSpecifications.createSpecification(productSearchDTO);
+        List<Integer> productIds = null;
+        if (productSearchDTO != null && productSearchDTO.getFromRate() != null && productSearchDTO.getToRate() != null) {
+            productIds = productRateRepository.getAllBetweenRates(productSearchDTO.getFromRate(), productSearchDTO.getToRate());
+        }
+        Specification<Product> specification = ProductSpecifications.createSpecification(productSearchDTO, productIds);
         return productRepository.findAll(specification, pageable)
                 .map(productMapper::toDto);
     }

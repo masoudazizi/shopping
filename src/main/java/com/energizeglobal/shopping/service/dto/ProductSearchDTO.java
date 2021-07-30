@@ -13,4 +13,6 @@ public class ProductSearchDTO implements Serializable {
     private BigDecimal fromPrice;
     private BigDecimal toPrice;
     private String categoryTitle;
+    private Double fromRate;
+    private Double toRate;
 }
