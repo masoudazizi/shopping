@@ -40,7 +40,7 @@ public class ReviewResource {
                 .body(result);
     }
 
-    @PutMapping("/reviews/{id}")
+    @PutMapping("/reviews")
     @PreAuthorize("hasAuthority(\"" + Constants.USER + "\")")
     public ResponseEntity<ReviewDTO> updateReview(@Valid @RequestBody ReviewDTO reviewDTO) {
         log.debug("REST request to update Review : {}", reviewDTO);

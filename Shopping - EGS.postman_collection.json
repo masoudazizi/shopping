@@ -1,0 +1,430 @@
+{
+	"id": "9e3f385a-b0d2-e862-5ace-6cd4970e6d8b",
+	"name": "Shopping - EGS",
+	"description": "",
+	"order": [
+		"b1015770-8ce9-742b-1e80-24472444b8f7",
+		"9dbf5969-c5d0-ba11-96e2-79b94d673a3f",
+		"090e975a-9b74-893c-eae4-e91aba7795b3",
+		"f44f5610-87a3-c7d7-13ac-f2ab5120a702",
+		"92cbb462-3e0d-04bc-e7e3-e83a30bb2cf5",
+		"48543955-b8a8-6055-4a0e-dcfefacded72",
+		"71f7eb29-2b3d-03d1-f3e7-ec9f166e0c24",
+		"123495d1-44cd-e80a-e672-242a29767dfa",
+		"0d2020a8-70cd-1d73-fae9-ff5370eca983",
+		"263c865b-0469-12e6-2ee1-926e2bdfc34d"
+	],
+	"folders": [],
+	"folders_order": [],
+	"timestamp": 1627643969368,
+	"owner": "1640348",
+	"public": false,
+	"requests": [
+		{
+			"id": "090e975a-9b74-893c-eae4-e91aba7795b3",
+			"headers": "Content-Type: application/merge-patch+json\nauthorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJtYXNvdWQiLCJhdXRoIjoiQURNSU4sVVNFUiIsImV4cCI6MTYyNzczMjczMX0.CKEfu_AnZxQ3cP8-9m6CYOP6yAsLladR7dPHMXMcz68RzFlByrNmec1hduh9LWU-BDMKo1tEssfGWmjRtiUEAQ\nAccept: */*\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/merge-patch+json",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "authorization",
+					"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJtYXNvdWQiLCJhdXRoIjoiQURNSU4sVVNFUiIsImV4cCI6MTYyNzczMjczMX0.CKEfu_AnZxQ3cP8-9m6CYOP6yAsLladR7dPHMXMcz68RzFlByrNmec1hduh9LWU-BDMKo1tEssfGWmjRtiUEAQ",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Accept",
+					"value": "*/*",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://localhost:8080/api/admin/set-blocking/2",
+			"queryParams": [],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"preRequestScript": null,
+			"method": "PATCH",
+			"collectionId": "9e3f385a-b0d2-e862-5ace-6cd4970e6d8b",
+			"data": [],
+			"dataMode": "raw",
+			"name": "http://localhost:8080/api/admin/set-blocking/{userId}",
+			"description": "set blocking true",
+			"descriptionFormat": "html",
+			"time": 1627646748429,
+			"version": 2,
+			"responses": [],
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"rawModeData": "{\n  \"activated\": true\n}"
+		},
+		{
+			"id": "0d2020a8-70cd-1d73-fae9-ff5370eca983",
+			"headers": "Content-Type: application/json\nauthorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJtYXNvdWQiLCJhdXRoIjoiQURNSU4sVVNFUiIsImV4cCI6MTYyNzczMjczMX0.CKEfu_AnZxQ3cP8-9m6CYOP6yAsLladR7dPHMXMcz68RzFlByrNmec1hduh9LWU-BDMKo1tEssfGWmjRtiUEAQ\nAccept: */*\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "authorization",
+					"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJtYXNvdWQiLCJhdXRoIjoiQURNSU4sVVNFUiIsImV4cCI6MTYyNzczMjczMX0.CKEfu_AnZxQ3cP8-9m6CYOP6yAsLladR7dPHMXMcz68RzFlByrNmec1hduh9LWU-BDMKo1tEssfGWmjRtiUEAQ",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Accept",
+					"value": "*/*",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://localhost:8080/api/products/search",
+			"queryParams": [],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"preRequestScript": null,
+			"method": "POST",
+			"collectionId": "9e3f385a-b0d2-e862-5ace-6cd4970e6d8b",
+			"data": [],
+			"dataMode": "raw",
+			"name": "http://localhost:8080/api/products/search",
+			"description": "search product",
+			"descriptionFormat": "html",
+			"time": 1627647539385,
+			"version": 2,
+			"responses": [],
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"rawModeData": "{\n  \"fromPrice\": 10,\n  \"title\": \"laptop\",\n  \"toPrice\": 1000\n}"
+		},
+		{
+			"id": "123495d1-44cd-e80a-e672-242a29767dfa",
+			"headers": "Content-Type: application/json\nauthorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJtYXNvdWQiLCJhdXRoIjoiQURNSU4sVVNFUiIsImV4cCI6MTYyNzczMjczMX0.CKEfu_AnZxQ3cP8-9m6CYOP6yAsLladR7dPHMXMcz68RzFlByrNmec1hduh9LWU-BDMKo1tEssfGWmjRtiUEAQ\nAccept: */*\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "authorization",
+					"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJtYXNvdWQiLCJhdXRoIjoiQURNSU4sVVNFUiIsImV4cCI6MTYyNzczMjczMX0.CKEfu_AnZxQ3cP8-9m6CYOP6yAsLladR7dPHMXMcz68RzFlByrNmec1hduh9LWU-BDMKo1tEssfGWmjRtiUEAQ",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Accept",
+					"value": "*/*",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://localhost:8080/api/products/1",
+			"queryParams": [],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"preRequestScript": null,
+			"method": "DELETE",
+			"collectionId": "9e3f385a-b0d2-e862-5ace-6cd4970e6d8b",
+			"data": [],
+			"dataMode": "raw",
+			"name": "http://localhost:8080/api/products/{id}",
+			"description": "delete product",
+			"descriptionFormat": "html",
+			"time": 1627647417305,
+			"version": 2,
+			"responses": [],
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"rawModeData": "{\n  \"id\":1,\n  \"categoryId\": 1,\n  \"description\": \"the first product should update\",\n  \"price\": 200,\n  \"title\": \"laptop\"\n}"
+		},
+		{
+			"id": "263c865b-0469-12e6-2ee1-926e2bdfc34d",
+			"headers": "Content-Type: application/json\nauthorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJtYXNvdWQiLCJhdXRoIjoiQURNSU4sVVNFUiIsImV4cCI6MTYyNzczMjczMX0.CKEfu_AnZxQ3cP8-9m6CYOP6yAsLladR7dPHMXMcz68RzFlByrNmec1hduh9LWU-BDMKo1tEssfGWmjRtiUEAQ\nAccept: */*\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "authorization",
+					"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJtYXNvdWQiLCJhdXRoIjoiQURNSU4sVVNFUiIsImV4cCI6MTYyNzczMjczMX0.CKEfu_AnZxQ3cP8-9m6CYOP6yAsLladR7dPHMXMcz68RzFlByrNmec1hduh9LWU-BDMKo1tEssfGWmjRtiUEAQ",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Accept",
+					"value": "*/*",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://localhost:8080/api/reviews",
+			"queryParams": [],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"preRequestScript": null,
+			"method": "POST",
+			"collectionId": "9e3f385a-b0d2-e862-5ace-6cd4970e6d8b",
+			"data": [],
+			"dataMode": "raw",
+			"name": "http://localhost:8080/api/reviews",
+			"description": "add review ",
+			"descriptionFormat": "html",
+			"time": 1627647685721,
+			"version": 2,
+			"responses": [],
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"rawModeData": "{\n  \"comment\": \"this is a good product\",\n  \"productId\": 2,\n  \"rate\": 5\n}"
+		},
+		{
+			"id": "48543955-b8a8-6055-4a0e-dcfefacded72",
+			"headers": "Content-Type: application/json\nauthorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJtYXNvdWQiLCJhdXRoIjoiQURNSU4sVVNFUiIsImV4cCI6MTYyNzczMjczMX0.CKEfu_AnZxQ3cP8-9m6CYOP6yAsLladR7dPHMXMcz68RzFlByrNmec1hduh9LWU-BDMKo1tEssfGWmjRtiUEAQ\nAccept: */*\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "authorization",
+					"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJtYXNvdWQiLCJhdXRoIjoiQURNSU4sVVNFUiIsImV4cCI6MTYyNzczMjczMX0.CKEfu_AnZxQ3cP8-9m6CYOP6yAsLladR7dPHMXMcz68RzFlByrNmec1hduh9LWU-BDMKo1tEssfGWmjRtiUEAQ",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Accept",
+					"value": "*/*",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://localhost:8080/api/products/1",
+			"queryParams": [],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"preRequestScript": null,
+			"method": "GET",
+			"collectionId": "9e3f385a-b0d2-e862-5ace-6cd4970e6d8b",
+			"data": [],
+			"dataMode": "raw",
+			"name": "http://localhost:8080/api/products/{id}",
+			"description": "get product by id",
+			"descriptionFormat": "html",
+			"time": 1627647139894,
+			"version": 2,
+			"responses": [],
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"rawModeData": "{\n  \"categoryId\": 1,\n  \"description\": \"the first product\",\n  \"price\": 100,\n  \"title\": \"laptop\"\n}"
+		},
+		{
+			"id": "71f7eb29-2b3d-03d1-f3e7-ec9f166e0c24",
+			"headers": "Content-Type: application/json\nauthorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJtYXNvdWQiLCJhdXRoIjoiQURNSU4sVVNFUiIsImV4cCI6MTYyNzczMjczMX0.CKEfu_AnZxQ3cP8-9m6CYOP6yAsLladR7dPHMXMcz68RzFlByrNmec1hduh9LWU-BDMKo1tEssfGWmjRtiUEAQ\nAccept: */*\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "authorization",
+					"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJtYXNvdWQiLCJhdXRoIjoiQURNSU4sVVNFUiIsImV4cCI6MTYyNzczMjczMX0.CKEfu_AnZxQ3cP8-9m6CYOP6yAsLladR7dPHMXMcz68RzFlByrNmec1hduh9LWU-BDMKo1tEssfGWmjRtiUEAQ",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Accept",
+					"value": "*/*",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://localhost:8080/api/products",
+			"queryParams": [],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"preRequestScript": null,
+			"method": "PUT",
+			"collectionId": "9e3f385a-b0d2-e862-5ace-6cd4970e6d8b",
+			"data": [],
+			"dataMode": "raw",
+			"name": "http://localhost:8080/api/products",
+			"description": "update product",
+			"descriptionFormat": "html",
+			"time": 1627647312415,
+			"version": 2,
+			"responses": [],
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"rawModeData": "{\n  \"id\":1,\n  \"categoryId\": 1,\n  \"description\": \"the first product should update\",\n  \"price\": 200,\n  \"title\": \"laptop\"\n}"
+		},
+		{
+			"id": "92cbb462-3e0d-04bc-e7e3-e83a30bb2cf5",
+			"headers": "Content-Type: application/merge-patch+json\nauthorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJtYXNvdWQiLCJhdXRoIjoiQURNSU4sVVNFUiIsImV4cCI6MTYyNzczMjczMX0.CKEfu_AnZxQ3cP8-9m6CYOP6yAsLladR7dPHMXMcz68RzFlByrNmec1hduh9LWU-BDMKo1tEssfGWmjRtiUEAQ\nAccept: */*\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/merge-patch+json",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "authorization",
+					"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJtYXNvdWQiLCJhdXRoIjoiQURNSU4sVVNFUiIsImV4cCI6MTYyNzczMjczMX0.CKEfu_AnZxQ3cP8-9m6CYOP6yAsLladR7dPHMXMcz68RzFlByrNmec1hduh9LWU-BDMKo1tEssfGWmjRtiUEAQ",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Accept",
+					"value": "*/*",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://localhost:8080/api/products",
+			"queryParams": [],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"preRequestScript": null,
+			"method": "POST",
+			"collectionId": "9e3f385a-b0d2-e862-5ace-6cd4970e6d8b",
+			"data": [],
+			"dataMode": "raw",
+			"name": "http://localhost:8080/api/products",
+			"description": "create product",
+			"descriptionFormat": "html",
+			"time": 1627647028652,
+			"version": 2,
+			"responses": [],
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"rawModeData": "{\n  \"categoryId\": 1,\n  \"description\": \"the first product\",\n  \"price\": 100,\n  \"title\": \"laptop\"\n}"
+		},
+		{
+			"id": "9dbf5969-c5d0-ba11-96e2-79b94d673a3f",
+			"headers": "Content-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://localhost:8080/api/sign-in",
+			"queryParams": [],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"preRequestScript": null,
+			"method": "POST",
+			"collectionId": "9e3f385a-b0d2-e862-5ace-6cd4970e6d8b",
+			"data": [],
+			"dataMode": "raw",
+			"name": "http://localhost:8080/api/sign-in",
+			"description": "sign-in with admin user",
+			"descriptionFormat": "html",
+			"time": 1627644350217,
+			"version": 2,
+			"responses": [],
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"rawModeData": "{\n  \"username\": \"masoud\",\n  \"password\": \"masoud\"\n}"
+		},
+		{
+			"id": "b1015770-8ce9-742b-1e80-24472444b8f7",
+			"headers": "Content-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://localhost:8080/api/sign-up",
+			"queryParams": [],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"preRequestScript": null,
+			"method": "POST",
+			"collectionId": "9e3f385a-b0d2-e862-5ace-6cd4970e6d8b",
+			"data": [],
+			"dataMode": "raw",
+			"name": "http://localhost:8080/api/sign-up",
+			"description": "successful sign up request",
+			"descriptionFormat": "html",
+			"time": 1627644244522,
+			"version": 2,
+			"responses": [],
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"rawModeData": "{\n  \"email\": \"test@gmail.com\",\n  \"firstName\": \"test-firstname\",\n  \"lastName\": \"test-family\",\n  \"login\": \"test\",\n  \"password\": \"test\"\n}"
+		},
+		{
+			"id": "f44f5610-87a3-c7d7-13ac-f2ab5120a702",
+			"headers": "Content-Type: application/merge-patch+json\nauthorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJtYXNvdWQiLCJhdXRoIjoiQURNSU4sVVNFUiIsImV4cCI6MTYyNzczMjczMX0.CKEfu_AnZxQ3cP8-9m6CYOP6yAsLladR7dPHMXMcz68RzFlByrNmec1hduh9LWU-BDMKo1tEssfGWmjRtiUEAQ\nAccept: */*\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/merge-patch+json",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "authorization",
+					"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJtYXNvdWQiLCJhdXRoIjoiQURNSU4sVVNFUiIsImV4cCI6MTYyNzczMjczMX0.CKEfu_AnZxQ3cP8-9m6CYOP6yAsLladR7dPHMXMcz68RzFlByrNmec1hduh9LWU-BDMKo1tEssfGWmjRtiUEAQ",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Accept",
+					"value": "*/*",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://localhost:8080/api/categories",
+			"queryParams": [],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"preRequestScript": null,
+			"method": "POST",
+			"collectionId": "9e3f385a-b0d2-e862-5ace-6cd4970e6d8b",
+			"data": [],
+			"dataMode": "raw",
+			"name": "http://localhost:8080/api/categories",
+			"description": "create category",
+			"descriptionFormat": "html",
+			"time": 1627646942188,
+			"version": 2,
+			"responses": [],
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"rawModeData": "{\n  \"description\": \"the first category\",\n  \"name\": \"first category\"\n}"
+		}
+	]
+}

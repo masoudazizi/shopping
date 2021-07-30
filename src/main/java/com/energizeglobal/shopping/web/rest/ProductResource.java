@@ -46,7 +46,7 @@ public class ProductResource {
                 .body(result);
     }
 
-    @PutMapping("/products/{id}")
+    @PutMapping("/products")
     @PreAuthorize("hasAuthority(\"" + Constants.ADMIN + "\")")
     public ResponseEntity<ProductDTO> updateProduct(@Valid @RequestBody ProductDTO productDTO) {
         log.debug("REST request to update Product : {}", productDTO);

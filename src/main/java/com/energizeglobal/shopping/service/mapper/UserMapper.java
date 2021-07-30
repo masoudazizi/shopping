@@ -1,15 +1,15 @@
 package com.energizeglobal.shopping.service.mapper;
 
 import com.energizeglobal.shopping.domain.User;
-import com.energizeglobal.shopping.service.dto.UserDTO;
+import com.energizeglobal.shopping.service.dto.BaseUserDTO;
 import org.mapstruct.Mapper;
 
 @Mapper(componentModel = "spring", uses = {})
-public interface UserMapper extends EntityMapper<UserDTO, User> {
+public interface UserMapper extends EntityMapper<BaseUserDTO, User> {
 
-    UserDTO toDto(User s);
+    BaseUserDTO toDto(User s);
 
-    User toEntity(UserDTO userDTO);
+    User toEntity(BaseUserDTO baseUserDTO);
 
     default User fromId(Long id) {
         if (id == null) {

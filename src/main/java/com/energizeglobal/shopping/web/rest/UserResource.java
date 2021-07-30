@@ -3,9 +3,11 @@ package com.energizeglobal.shopping.web.rest;
 import com.energizeglobal.shopping.config.Constants;
 import com.energizeglobal.shopping.security.jwt.JWTFilter;
 import com.energizeglobal.shopping.security.jwt.TokenProvider;
+import com.energizeglobal.shopping.service.UserService;
+import com.energizeglobal.shopping.service.dto.BaseUserDTO;
 import com.energizeglobal.shopping.service.impl.UserServiceImpl;
-import com.energizeglobal.shopping.service.dto.UserDTO;
 import com.energizeglobal.shopping.service.dto.LoginDTO;
+import com.energizeglobal.shopping.web.rest.exceptions.BadRequestException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.RequiredArgsConstructor;
 import org.slf4j.Logger;
@@ -17,6 +19,10 @@ import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
+import javax.validation.constraints.NotNull;
+import java.net.URISyntaxException;
+import java.util.Objects;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/api")
@@ -24,14 +30,14 @@ import javax.validation.Valid;
 public class UserResource {
 
     private final static Logger log = LoggerFactory.getLogger(UserResource.class);
-    private final UserServiceImpl userServiceImpl;
+    private final UserService userService;
     private final TokenProvider tokenProvider;
 
     @PostMapping("/sign-up")
     @ResponseStatus(HttpStatus.CREATED)
-    public void registerAccount(@Valid @RequestBody UserDTO.ManagedUserDTO managedUserDTO) {
+    public void registerAccount(@Valid @RequestBody BaseUserDTO.ManagedBaseUserDTO managedUserDTO) {
         log.info("request for register : {}", managedUserDTO);
-        userServiceImpl.registerUser(managedUserDTO, managedUserDTO.getPassword());
+        userService.registerUser(managedUserDTO, managedUserDTO.getPassword());
     }
 
     @PostMapping("/sign-in")
@@ -42,12 +48,14 @@ public class UserResource {
         return new ResponseEntity<>(new UserResource.JWTToken(jwt), httpHeaders, HttpStatus.OK);
     }
 
-    @GetMapping("/admin/block/{userId}/{blocked}")
-    @ResponseStatus(HttpStatus.ACCEPTED)
     @PreAuthorize("hasAuthority(\"" + Constants.ADMIN + "\")")
-    public void blocked(@PathVariable(value = "userId", required = false) Long userId, @PathVariable(value = "blocked", required = false) Boolean blocked) {
-        log.info("request for blocking or unblocking a user with id {} and blocked status {} :", userId, blocked);
-        userServiceImpl.blockUser(userId, blocked);
+    @PatchMapping(value = "/admin/set-blocking/{userId}", consumes = "application/merge-patch+json")
+    @ResponseStatus(HttpStatus.ACCEPTED)
+    public void blockOrUnblock(
+            @PathVariable(value = "userId", required = false) final Long userId,
+            @NotNull @RequestBody BaseUserDTO.BlockingDTO blockingDTO){
+        log.debug("REST request to partial update user partially : {}, {}", userId, blockingDTO);
+        userService.setBlockingState(userId,blockingDTO);
     }
 
     static class JWTToken {

@@ -6,7 +6,7 @@ import com.energizeglobal.shopping.domain.User;
 import com.energizeglobal.shopping.repository.AuthorityRepository;
 import com.energizeglobal.shopping.repository.UserRepository;
 import com.energizeglobal.shopping.service.UserService;
-import com.energizeglobal.shopping.service.dto.UserDTO;
+import com.energizeglobal.shopping.service.dto.BaseUserDTO;
 import com.energizeglobal.shopping.service.mapper.UserMapper;
 import com.energizeglobal.shopping.web.rest.exceptions.BadRequestException;
 import lombok.RequiredArgsConstructor;
@@ -31,16 +31,16 @@ public class UserServiceImpl implements UserService {
     private final AuthorityRepository authorityRepository;
     private final UserMapper userMapper;
 
-    private void userExistValidation(UserDTO userDTO) {
+    private void userExistValidation(BaseUserDTO.ManagedUserDTO managedUserDTO) {
         userRepository
-                .findOneByLogin(userDTO.getLogin().toLowerCase())
+                .findOneByLogin(managedUserDTO.getLogin().toLowerCase())
                 .ifPresent(
                         existingUser -> {
                             throw new BadRequestException("error.userName.already.used");
                         }
                 );
         userRepository
-                .findOneByEmailIgnoreCase(userDTO.getEmail())
+                .findOneByEmailIgnoreCase(managedUserDTO.getEmail())
                 .ifPresent(
                         existingUser -> {
                             throw new BadRequestException("error.email.already.used");
@@ -49,13 +49,13 @@ public class UserServiceImpl implements UserService {
     }
 
 
-    public void registerUser(UserDTO userDTO, String password) {
-        userExistValidation(userDTO);
-        User user = userMapper.toEntity(userDTO);
-        user.setLogin(userDTO.getLogin().toLowerCase());
+    public void registerUser(BaseUserDTO.ManagedUserDTO managedUserDTO, String password) {
+        userExistValidation(managedUserDTO);
+        User user = userMapper.toEntity(managedUserDTO);
+        user.setLogin(managedUserDTO.getLogin().toLowerCase());
         user.setPassword(passwordEncoder.encode(password));
-        if (userDTO.getEmail() != null) {
-            user.setEmail(userDTO.getEmail().toLowerCase());
+        if (managedUserDTO.getEmail() != null) {
+            user.setEmail(managedUserDTO.getEmail().toLowerCase());
         }
         Set<Authority> authorities = new HashSet<>();
         authorityRepository.findById(Constants.USER).ifPresent(authorities::add);
@@ -65,22 +65,41 @@ public class UserServiceImpl implements UserService {
     }
 
 
-    public void blockUser(Long userId, Boolean blocked) {
+    public void setBlockingState(Long userId, BaseUserDTO.BlockingDTO blockingDTO) {
         Optional<User> userOptional = userRepository.findById(userId);
         if (!userOptional.isPresent()) {
             throw new BadRequestException("error.user.not.exist");
         }
-        if (userOptional.get().isActivated() == Boolean.TRUE && userOptional.get().isActivated() == blocked) {
+        if (userOptional.get().isActivated() == Boolean.TRUE && userOptional.get().isActivated() == blockingDTO.isActivated()) {
             throw new BadRequestException("user.is.already.unblocked");
         }
-        if (userOptional.get().isActivated() == Boolean.FALSE && userOptional.get().isActivated() == blocked) {
+        if (userOptional.get().isActivated() == Boolean.FALSE && userOptional.get().isActivated() == blockingDTO.isActivated()) {
             throw new BadRequestException("user.is.already.blocked");
         }
         userOptional.ifPresent(userPresent -> {
-            userPresent.setActivated(blocked);
+            userPresent.setActivated(blockingDTO.isActivated());
             userRepository.save(userOptional.get());
         });
 
     }
+
+
+//    public void blockUser(Long userId, Boolean blocked) {
+//        Optional<User> userOptional = userRepository.findById(userId);
+//        if (!userOptional.isPresent()) {
+//            throw new BadRequestException("error.user.not.exist");
+//        }
+//        if (userOptional.get().isActivated() == Boolean.TRUE && userOptional.get().isActivated() == blocked) {
+//            throw new BadRequestException("user.is.already.unblocked");
+//        }
+//        if (userOptional.get().isActivated() == Boolean.FALSE && userOptional.get().isActivated() == blocked) {
+//            throw new BadRequestException("user.is.already.blocked");
+//        }
+//        userOptional.ifPresent(userPresent -> {
+//            userPresent.setActivated(blocked);
+//            userRepository.save(userOptional.get());
+//        });
+//
+//    }
 
 }

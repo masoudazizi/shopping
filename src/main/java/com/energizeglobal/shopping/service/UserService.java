@@ -1,11 +1,11 @@
 package com.energizeglobal.shopping.service;
 
-import com.energizeglobal.shopping.service.dto.UserDTO;
+import com.energizeglobal.shopping.service.dto.BaseUserDTO;
 
 public interface UserService {
 
-    void registerUser(UserDTO userDTO, String password);
+    void registerUser(BaseUserDTO.ManagedUserDTO managedUserDTO, String password);
 
-    void blockUser(Long userId, Boolean blocked);
+    void setBlockingState(Long userId, BaseUserDTO.BlockingDTO blockingDTO);
 
 }

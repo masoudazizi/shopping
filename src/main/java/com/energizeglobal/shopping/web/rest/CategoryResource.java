@@ -44,7 +44,7 @@ public class CategoryResource {
                 .body(result);
     }
 
-    @PutMapping("/categories/{id}")
+    @PutMapping("/categories")
     @PreAuthorize("hasAuthority(\"" + Constants.ADMIN + "\")")
     public ResponseEntity<CategoryDTO> updateCategory(@Valid @RequestBody CategoryDTO categoryDTO) {
         log.debug("REST request to update Category : {}", categoryDTO);
