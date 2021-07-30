@@ -77,7 +77,7 @@ public class ProductServiceImpl implements ProductService {
     @Override
     public Page<ProductDTO> search(ProductSearchDTO productSearchDTO, Pageable pageable) {
         List<Integer> productIds = null;
-        if (productSearchDTO != null && productSearchDTO.getFromRate() != null && productSearchDTO.getToRate() != null) {
+        if (productSearchDTO != null && (productSearchDTO.getFromRate() != null || productSearchDTO.getToRate() != null)) {
             productIds = productRateRepository.getAllBetweenRates(productSearchDTO.getFromRate(), productSearchDTO.getToRate());
         }
         Specification<Product> specification = ProductSpecifications.createSpecification(productSearchDTO, productIds);
