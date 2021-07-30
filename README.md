@@ -10,4 +10,12 @@
 * UI is optional, only web service + postman collection for all possible requests is enough.
 * Please push your work on GitLab, GitHub, or Bitbucket.
 * It would be great to deploy the application somewhere and provide the URL.(Optional)
-*  Please use Spring Boot's last version for this application.
+*  Please use Spring Boot's last version for this application
+
+
+### details 
+
+* the query inside the data.sql must be executed in order to have the admin user with username: 'masoud' and password: 'masoud'.
+* database of the project is MySql and its name is shopping
+* the postman collection related to the requests you mentioned in the description of the technical task is at the root of the project with the name Shopping - EGS.postman_collection.json
+* the swagger is presented in http://localhost:8080/swagger-ui/ URL
